@@ -41,6 +41,11 @@ public class SimpleFPPN : NetworkBehaviour
         if(!IsOwner) return;
     }
 
+    private void FixedUpdate()
+    {
+        doMovement();
+    }
+
     public void OnLook(InputAction.CallbackContext value){
         look = value.ReadValue<Vector2>();
 
@@ -56,9 +61,10 @@ public class SimpleFPPN : NetworkBehaviour
 
     public void OnMovement(InputAction.CallbackContext value){
         move = value.ReadValue<Vector2>();
+    }
 
-        moveDirection = cam.forward * move.x + cam.right * move.y;
-
+    public void doMovement(){
+        moveDirection = cam.forward * move.y + cam.right * move.x;
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
 }

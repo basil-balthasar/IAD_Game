@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/TTT/TTT_Scene.unity
     guid: c4b11b8694076467cbcd501ce2675ad7
   - enabled: 1
